@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 12345
+    #url: jdbc:mysql://192.168.1.163:3306/assistant?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/wechat?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    #数据源其他配置
+  thymeleaf:
+    # 配置视图路径前缀
+    prefix: classpath:/templates/
+    # 配置视图路径后缀
+    suffix: .html
+    mode: html
+    # 关闭缓存 修改视图 刷新浏览器就显示 开发阶段务必关闭缓存 (=false)
+    cache: false
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml, classpath:mybatis/mapper/wechat/*.xml
+  #完全限定名来指定这些POJO的引用
+  type-aliases-package: com.teach.assistant.entity
+  configuration:
+    # 驼峰命名
+    map-underscore-to-camel-case: true
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper: debug
+
+#wechat:
+#  appId: wx6c0defbbfea881ec
+#  appSecret: c4fdedbe17b786494b72ebf093660486
+#  token: 67yuhjNM#
+#  aesKey: ''
+
+wx:
+  mp:
+    configs:
+      - appId: wx6c0defbbfea881ec
+        appSecret: c4fdedbe17b786494b72ebf093660486
+        token: 67yuhjNM#
+        aesKey: ""
+#      - appId: 1111 （一个公众号的appid）
+#        appSecret: 1111（公众号的appsecret）
+#        token: 111 （接口配置里的Token值）
+#        aesKey: 111 （接口配置里的EncodingAESKey值）
