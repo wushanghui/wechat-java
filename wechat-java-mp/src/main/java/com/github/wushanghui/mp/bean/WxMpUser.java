@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * @date 2019-11-06 23:23
  */
 @Data
-public class MpUser implements Serializable {
+public class WxMpUser implements Serializable {
 
     private static final long serialVersionUID = -1346210708699775856L;
 
@@ -23,7 +23,7 @@ public class MpUser implements Serializable {
     /**
      * 昵称
      */
-    private String nickname;
+    private String nickName;
     /**
      * 性别，0-未知，1-男，2-女
      */
@@ -47,7 +47,7 @@ public class MpUser implements Serializable {
     /**
      * 创建时间
      */
-    private LocalDateTime creatDate;
+    private LocalDateTime createDate;
     /**
      * 更新时间
      */

@@ -144,7 +144,7 @@ public class WxMpReturnCode {
      */
     public final static int RETURN_CODE_40032 = 0;
     /**
-     * 不合法的请求字符，不能包含 \uxxxx 格式的字符
+     * 不合法的请求字符，不能包含 \\uxxxx 格式的字符
      */
     public final static int RETURN_CODE_40033 = 0;
     /**

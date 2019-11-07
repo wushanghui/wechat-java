@@ -20,7 +20,6 @@ spring:
     cache: false
 
 mybatis:
-  config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
   #完全限定名来指定这些POJO的引用
   type-aliases-package: com.github.wushanghui.mp.bean

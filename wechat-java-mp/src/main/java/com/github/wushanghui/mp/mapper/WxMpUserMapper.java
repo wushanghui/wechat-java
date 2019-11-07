@@ -1,6 +1,6 @@
 package com.github.wushanghui.mp.mapper;
 
-import com.github.wushanghui.mp.bean.MpUser;
+import com.github.wushanghui.mp.bean.WxMpUser;
 
 import java.math.BigDecimal;
 
@@ -9,35 +9,35 @@ import java.math.BigDecimal;
  * @version 1.0.0
  * @date 2019/11/7 11:40
  */
-public interface WxUserMapper {
+public interface WxMpUserMapper {
 
     /**
      * 新增用户
      * @return 条数
      */
-    int insertWxUser();
+    int insertWxMpUser(WxMpUser wxMpUser);
     /**
      * 修改用户
      * @param id 主键
      * @return 条数
      */
-    int updateWxUser(BigDecimal id);
+    int updateWxMpUser(BigDecimal id);
     /**
      * 查询用户
      * @param id 主键
      * @return 条数
      */
-    MpUser selectWxUser(BigDecimal id);
+    WxMpUser selectWxMpUser(BigDecimal id);
     /**
      * 逻辑删除
      * @param id 主键
      * @return 条数
      */
-    int logicDeleteWxUser(BigDecimal id);
+    int logicDeleteWxMpUser(BigDecimal id);
     /**
      * 物理删除
      * @param id 主键
      * @return 条数
      */
-    int physicsDeleteWxUser(BigDecimal id);
+    int physicsDeleteWxMpUser(BigDecimal id);
 }
