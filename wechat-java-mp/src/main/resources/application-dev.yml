@@ -20,12 +20,14 @@ spring:
     cache: false
 
 mybatis:
-  mapper-locations: classpath:mybatis/mapper/*.xml, classpath:mybatis/mapper/wechat/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
   #完全限定名来指定这些POJO的引用
-  type-aliases-package: com.teach.assistant.entity
+  type-aliases-package: com.github.wushanghui.mp.bean
   configuration:
     # 驼峰命名
     map-underscore-to-camel-case: true
+
 
 #showSql
 logging:

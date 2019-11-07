@@ -1,6 +1,8 @@
 package com.github.wushanghui.mp.handler;
 
 import com.github.wushanghui.mp.builder.TextBuilder;
+import com.github.wushanghui.mp.utils.constant.WxMpReturnCode;
+import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
@@ -13,6 +15,9 @@ import java.util.Map;
 
 /**
  * 订阅处理
+ * @author wsh
+ * @date 2019/11/7 11:40
+ * @version 1.0.0
  */
 @Component
 public class SubscribeHandler extends AbstractHandler {
@@ -33,7 +38,7 @@ public class SubscribeHandler extends AbstractHandler {
                 this.logger.info(userWxInfo.toString());
             }
         } catch (WxErrorException e) {
-            if (e.getError().getErrorCode() == 48001) {
+            if (e.getError().getErrorCode() == WxMpReturnCode.RETURN_CODE_48001) {
                 this.logger.info("该公众号没有获取用户信息权限！");
             }
         }
