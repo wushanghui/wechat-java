@@ -1,8 +1,10 @@
 package com.github.wushanghui.mp.mapper;
 
 import com.github.wushanghui.mp.bean.WxMpUser;
+import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 /**
  * @author wsh
@@ -30,10 +32,10 @@ public interface WxMpUserMapper {
     WxMpUser selectWxMpUser(BigDecimal id);
     /**
      * 逻辑删除
-     * @param id 主键
+     * @param openId 用户id
      * @return 条数
      */
-    int logicDeleteWxMpUser(BigDecimal id);
+    int logicDeleteWxMpUser(@Param("updateDate") LocalDateTime updateDate, @Param("updater") String updater, @Param("openId") String openId);
     /**
      * 物理删除
      * @param id 主键

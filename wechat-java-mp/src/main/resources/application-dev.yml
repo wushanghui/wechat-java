@@ -7,7 +7,10 @@ spring:
     password: 12345
     #url: jdbc:mysql://192.168.1.163:3306/assistant?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     url: jdbc:mysql://localhost:3306/wechat?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    # 高版本驱动
     driver-class-name: com.mysql.cj.jdbc.Driver
+    #低版本驱动
+    #driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     #数据源其他配置
   thymeleaf:
@@ -31,9 +34,7 @@ mybatis:
 #showSql
 logging:
   level:
-    com:
-      example:
-        mapper: debug
+    com.github.wushanghui.mp.mapper: debug
 
 #wechat:
 #  appId: wx6c0defbbfea881ec

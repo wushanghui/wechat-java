@@ -9,4 +9,14 @@
             #{openId},#{nickName},#{sex},#{language},#{headImgUrl},#{subscribeScene},#{deleteFlag},#{createDate,jdbcType=TIMESTAMP},#{creator},#{updateDate,jdbcType=TIMESTAMP},#{updater}
         )
     </insert>
+    <update id="logicDeleteWxMpUser">
+        update mp_user t set
+        t.delete_flag = '1',
+        t.update_date = #{updateDate, jdbcType=TIMESTAMP, typeHandler=org.apache.ibatis.type.LocalDateTimeTypeHandler},
+        t.updater = #{updater, jdbcType=VARCHAR, typeHandler=org.apache.ibatis.type.StringTypeHandler}
+        where t.open_id = #{openId,typeHandler=org.apache.ibatis.type.StringTypeHandler} and t.delete_flag = '0'
+    </update>
+    <delete id="physicsDeleteWxMpUser">
+        delete from mp_user where id = #{id}
+    </delete>
 </mapper>
